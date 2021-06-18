@@ -1,6 +1,9 @@
 require('chromedriver');
 let wd = require('selenium-webdriver');
-let browser = new wd.Builder().forBrowser('chrome').build();
+
+let chrome = require("selenium-webdriver/chrome");
+let browser = new wd.Builder().forBrowser('chrome').setChromeOptions(new chrome.Options().headless).build();
+// let browser = new wd.Builder().forBrowser('chrome').build();
 
 let matchId = 32262;  // Match unique ID whose details our script will scrap from their website.
 let inningss = 2;      
